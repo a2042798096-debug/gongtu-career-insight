@@ -1,0 +1,29 @@
+# Dependencies and package-manager cache
+node_modules/
+.pnpm-store/
+
+# Desktop build output (published through GitHub Releases)
+release/
+dist/
+out/
+
+# Local environment and logs
+.env
+.env.*
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Private signing material — public .cer files may be committed
+*.pfx
+*.p12
+*.pem
+*.key
+*.pvk
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
