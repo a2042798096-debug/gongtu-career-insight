@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; frame-src 'none'; frame-ancestors 'none'; form-action 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="覆盖全部本科专业门类的就业方向、升学体制、趋势预测与工作环境分析工具">
+  <title>工途 · 本科专业就业深析</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <svg class="icon-sprite" aria-hidden="true">
+    <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol>
+    <symbol id="icon-overview" viewBox="0 0 24 24"><path d="M4 19V9"/><path d="M10 19V5"/><path d="M16 19v-7"/><path d="M22 19H2"/></symbol>
+    <symbol id="icon-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></symbol>
+    <symbol id="icon-trend" viewBox="0 0 24 24"><path d="M4 17 10 11l4 4 6-8"/><path d="M15 7h5v5"/></symbol>
+    <symbol id="icon-work" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/><path d="M10 12v2h4v-2"/></symbol>
+    <symbol id="icon-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h3a3 3 0 0 0 3-3v-6a3 3 0 0 1 3-3"/></symbol>
+    <symbol id="icon-graduate" viewBox="0 0 24 24"><path d="m3 9 9-5 9 5-9 5-9-5Z"/><path d="M7 12v5c3 2 7 2 10 0v-5"/><path d="M21 9v6"/></symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="icon-type" viewBox="0 0 24 24"><path d="M4 19 10 5l6 14M6.2 14h7.6"/><path d="M16 10h5M18.5 7.5v5"/></symbol>
+    <symbol id="icon-print" viewBox="0 0 24 24"><path d="M7 8V3h10v5"/><rect x="5" y="14" width="14" height="7" rx="1"/><path d="M5 17H3v-7h18v7h-2M17 12h.01"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"/></symbol>
+    <symbol id="icon-arrow-down" viewBox="0 0 24 24"><path d="M12 4v16M6 14l6 6 6-6"/></symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></symbol>
+  </svg>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#top" aria-label="工途首页">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>工途</span>
+      </a>
+
+      <nav class="side-nav" aria-label="页面导航">
+        <a class="nav-item active" href="#taxonomy" data-section="taxonomy">
+          <span class="nav-icon"><svg><use href="#icon-grid"></use></svg></span>专业目录
+        </a>
+        <a class="nav-item" href="#overview" data-section="overview">
+          <span class="nav-icon"><svg><use href="#icon-overview"></use></svg></span>就业总览
+        </a>
+        <a class="nav-item" href="#directions" data-section="directions">
+          <span class="nav-icon"><svg><use href="#icon-compass"></use></svg></span>职业方向
+        </a>
+        <a class="nav-item" href="#forecast" data-section="forecast">
+          <span class="nav-icon"><svg><use href="#icon-trend"></use></svg></span>未来预测
+        </a>
+        <a class="nav-item" href="#environment" data-section="environment">
+          <span class="nav-icon"><svg><use href="#icon-work"></use></svg></span>工作实况
+        </a>
+        <a class="nav-item" href="#roadmap" data-section="roadmap">
+          <span class="nav-icon"><svg><use href="#icon-route"></use></svg></span>能力路线
+        </a>
+        <a class="nav-item" href="#pathways" data-section="pathways">
+          <span class="nav-icon"><svg><use href="#icon-graduate"></use></svg></span>升学体制
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="data-note">
+          <span class="pulse-dot"></span>
+          <div><strong>公开资料快照</strong><small>更新于 2026.08</small></div>
+        </div>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换明暗主题">
+          <svg class="ui-icon" aria-hidden="true"><use href="#icon-sun"></use></svg><span>切换主题</span>
+        </button>
+      </div>
+    </aside>
+
+    <div class="main-wrap" id="top">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuButton" type="button" aria-label="打开导航" aria-expanded="false" aria-controls="sidebar"><svg class="ui-icon" aria-hidden="true"><use href="#icon-menu"></use></svg></button>
+        <div class="breadcrumb"><span>本科专业库</span><b>/</b><strong id="breadcrumbMajor">计算机科学与技术</strong></div>
+        <div class="top-actions">
+          <span class="method-tag">数据 + 行业信号 + 情景推演</span>
+          <div class="font-settings" id="fontSettings">
+            <button class="font-settings-button" id="fontSettingsButton" type="button" aria-label="调整各模块字体大小" aria-expanded="false" aria-controls="fontSettingsPanel"><svg class="ui-icon" aria-hidden="true"><use href="#icon-type"></use></svg><span>字体</span></button>
+            <div class="font-settings-panel" id="fontSettingsPanel" role="dialog" aria-label="字体大小设置" hidden>
+              <header><div><strong>字体大小</strong><span>默认已提高 30%，各模块可独立调整</span></div><button id="fontSettingsClose" type="button" aria-label="关闭字体设置">×</button></header>
+              <div class="font-control-row is-global" data-font-row="all"><div><strong>全部模块</strong><span>同步调整所有区域</span></div><div class="font-stepper"><button type="button" data-font-action="decrease" data-font-module="all" aria-label="缩小全部模块字体">−</button><output data-font-output="all">130%</output><button type="button" data-font-action="increase" data-font-module="all" aria-label="放大全部模块字体">＋</button></div></div>
+              <div class="font-control-row" data-font-row="navigation"><div><strong>导航与顶部栏</strong><span>侧边导航、面包屑和操作按钮</span></div><div class="font-stepper"><button type="button" data-font-action="decrease" data-font-module="navigation" aria-label="缩小导航字体">−</button><output data-font-output="navigation">130%</output><button type="button" data-font-action="increase" data-font-module="navigation" aria-label="放大导航字体">＋</button></div></div>
+              <div class="font-control-row" data-font-row="taxonomy"><div><strong>专业分类</strong><span>门类、专业类、专业按钮与说明</span></div><div class="font-stepper"><button type="button" data-font-action="decrease" data-font-module="taxonomy" aria-label="缩小专业分类字体">−</button><output data-font-output="taxonomy">130%</output><button type="button" data-font-action="increase" data-font-module="taxonomy" aria-label="放大专业分类字体">＋</button></div></div>
+              <div class="font-control-row" data-font-row="major"><div><strong>专业详情</strong><span>专业差异、就业方向与路径卡片</span></div><div class="font-stepper"><button type="button" data-font-action="decrease" data-font-module="major" aria-label="缩小专业详情字体">−</button><output data-font-output="major">130%</output><button type="button" data-font-action="increase" data-font-module="major" aria-label="放大专业详情字体">＋</button></div></div>
+              <div class="font-control-row" data-font-row="analysis"><div><strong>深度报告</strong><span>就业总览、预测、工作实况与升学体制</span></div><div class="font-stepper"><button type="button" data-font-action="decrease" data-font-module="analysis" aria-label="缩小深度报告字体">−</button><output data-font-output="analysis">130%</output><button type="button" data-font-action="increase" data-font-module="analysis" aria-label="放大深度报告字体">＋</button></div></div>
+              <footer><button id="fontResetButton" type="button">恢复默认 130%</button><span>调整范围：90%—180%</span></footer>
+            </div>
+          </div>
+          <button class="icon-button" id="printButton" type="button" aria-label="打印分析报告"><svg class="ui-icon" aria-hidden="true"><use href="#icon-print"></use></svg></button>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="section taxonomy-section taxonomy-first" id="taxonomy">
+          <div class="taxonomy-intro">
+            <div>
+              <span class="eyebrow"><span></span> COMPLETE MAJOR CATALOG</span>
+              <h1>先选学科门类，<em>再看专业出路。</em></h1>
+            </div>
+            <p>覆盖教育部 2026 年本科专业目录。依次选择学科门类、专业类和具体专业，再查看就业方向、考公考编、考研及国企难度。</p>
+          </div>
+          <div class="taxonomy-tools">
+            <div class="taxonomy-search"><svg class="ui-icon" aria-hidden="true"><use href="#icon-search"></use></svg><input id="taxonomySearch" type="search" placeholder="搜索专业类、专业或代码，如：金融、临床医学、080901"></div>
+            <span id="taxonomyCount">13 个门类 · 92 个专业类 · 883 个专业</span>
+          </div>
+          <div class="discipline-selector" id="disciplineGrid" aria-label="学科门类列表"></div>
+          <div class="taxonomy-level-label"><span>第 2 步 · 选择专业类</span><b id="disciplineSelectionLabel">工学</b></div>
+          <div class="family-selector" id="taxonomyGrid" aria-label="本科专业类列表"></div>
+
+          <div class="major-explorer">
+            <header class="explorer-head">
+              <div class="current-family" id="currentFamily"></div>
+              <span>第 3 步 · 选择具体专业</span>
+            </header>
+            <div class="major-button-grid" id="majorButtonGrid" aria-label="该大类专业列表"></div>
+
+            <section class="family-overview" aria-labelledby="familyOverviewTitle">
+              <div class="family-overview-head">
+                <div><span class="card-kicker">FAMILY PORTRAIT</span><h3 id="familyOverviewTitle">大类画像</h3></div>
+                <p id="familyOverviewSummary"></p>
+              </div>
+              <div class="family-overview-grid" id="familyOverviewGrid"></div>
+            </section>
+
+            <article class="major-preview" id="majorPreview" aria-live="polite">
+              <div class="major-preview-head">
+                <div><span class="card-kicker">SELECTED MAJOR</span><h2 id="selectedMajorTitle">计算机科学与技术</h2><p id="selectedMajorMeta"></p></div>
+                <button id="deepAnalysisButton" type="button">查看完整深析 <svg class="ui-icon" aria-hidden="true"><use href="#icon-arrow-down"></use></svg></button>
+              </div>
+              <div class="major-difference-grid" id="majorDifferenceGrid"></div>
+              <div class="preview-block directions-preview-block">
+                <div class="preview-label"><span>01</span><h3>典型就业方向</h3></div>
+                <div class="preview-directions" id="previewDirections"></div>
+              </div>
+              <div class="preview-block quick-preview-block">
+                <div class="preview-label"><span>02</span><h3>升学与体制难度</h3></div>
+                <div class="quick-path-grid" id="quickPathGrid"></div>
+              </div>
+              <div class="preview-attention" id="previewAttention"></div>
+              <div class="preview-block route-example-block">
+                <div class="preview-label"><span>03</span><h3>具体岗位与方向</h3></div>
+                <div class="route-example-grid" id="routeExampleGrid"></div>
+              </div>
+              <div class="preview-block salary-block">
+                <div class="preview-label"><span>04</span><h3>学历、城市与薪资预测</h3></div>
+                <div class="salary-explorer">
+                  <div class="salary-controls">
+                    <label for="previewDegreeSelect">学历<select id="previewDegreeSelect"><option value="college">专科</option><option value="bachelor" selected>本科</option><option value="master">硕士</option><option value="doctor">博士</option></select></label>
+                    <label for="previewCitySelect">就业城市<select id="previewCitySelect"><option value="tier1">北上深广杭等高薪城市</option><option value="newtier1">苏州、南京、武汉、成都、西安等</option><option value="tier2">普通二线 / 制造型地级市</option><option value="county">县域 / 基层项目</option></select></label>
+                  </div>
+                  <div class="education-requirement" id="educationRequirement"></div>
+                  <div class="salary-forecast-head"><div><span>税前月薪区间预测</span><strong id="forecastContext"></strong></div><small>单位：千元/月</small></div>
+                  <div class="salary-forecast-grid" id="salaryForecastGrid"></div>
+                  <p class="salary-disclaimer" id="salaryDisclaimer"></p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <p class="taxonomy-note">目录依据教育部《普通高等学校本科专业目录（2026 年）》整理，T 为特设专业、K 为国家控制布点专业；交叉学科没有官方专业类层级，页面以“直属专业”展示组承载。难度为相对比较，不是录取概率。</p>
+        </section>
+
+        <section class="search-panel" aria-label="专业分析条件">
+          <div class="search-main">
+            <label for="majorInput">选择完整深度报告专业</label>
+            <div class="search-box">
+              <svg class="ui-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+              <input id="majorInput" list="majorOptions" value="计算机科学与技术" autocomplete="off" aria-describedby="searchHint">
+              <datalist id="majorOptions">
+                <option value="计算机科学与技术"></option>
+                <option value="自动化"></option>
+                <option value="电气工程及其自动化"></option>
+                <option value="机械设计制造及其自动化"></option>
+              </datalist>
+              <button id="analyzeButton" type="button"><span>生成深析</span><svg class="ui-icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></button>
+            </div>
+            <p id="searchHint">目录覆盖 883 个专业；全部专业均可生成完整长篇深度报告。</p>
+          </div>
+          <div class="filter-group">
+            <label for="regionSelect">就业区域</label>
+            <select id="regionSelect">
+              <option value="tier1">一线 / 新一线</option>
+              <option value="tier2">二线城市</option>
+              <option value="all">全国综合</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="degreeSelect">目标学历</label>
+            <select id="degreeSelect">
+              <option value="bachelor">本科</option>
+              <option value="master">硕士</option>
+              <option value="college">专科</option>
+            </select>
+          </div>
+        </section>
+
+        <div class="analysis-status" id="analysisStatus" role="status" aria-live="polite">
+          <span class="status-dot"></span><span>分析就绪</span><b>基于公开资料快照与情景模型，不构成薪资承诺</b>
+        </div>
+
+        <section class="section" id="overview">
+          <div class="section-heading">
+            <div><span class="section-no">02</span><h2>就业总览</h2></div>
+            <p id="overviewLead">需求仍在增长，但“会写代码”正在让位于“能解决复杂工程问题”。</p>
+          </div>
+
+          <div class="metric-grid">
+            <article class="metric-card accent-card">
+              <div class="metric-top"><span>综合机会指数</span><i>研究模型</i></div>
+              <div class="score-row"><strong id="opportunityScore">82</strong><small>/ 100</small></div>
+              <div class="score-track"><span id="opportunityBar" style="width:82%"></span></div>
+              <p id="opportunityText">需求面广，岗位分化明显</p>
+            </article>
+            <article class="metric-card">
+              <div class="metric-top"><span>应届月薪区间</span><i id="salaryRegion">一线 / 新一线</i></div>
+              <div class="metric-value"><strong id="salaryRange">¥8k–20k</strong></div>
+              <p id="salaryNote">中位段受城市、院校与项目能力影响大</p>
+            </article>
+            <article class="metric-card">
+              <div class="metric-top"><span>入门竞争</span><i>相对判断</i></div>
+              <div class="metric-value"><strong id="competitionLabel">偏高</strong><span class="trend up" id="competitionTrend">↑ 分化</span></div>
+              <p id="competitionNote">基础岗位拥挤，复合型方向缺口更明显</p>
+            </article>
+            <article class="metric-card">
+              <div class="metric-top"><span>职业可迁移性</span><i>跨行业能力</i></div>
+              <div class="metric-value"><strong id="mobilityLabel">很强</strong><span class="trend stable">横向广</span></div>
+              <p id="mobilityNote">可进入互联网、制造、金融、科研等行业</p>
+            </article>
+          </div>
+
+          <div class="insight-grid">
+            <article class="insight-card conclusion-card">
+              <span class="card-kicker">ANALYST VIEW</span>
+              <h3>一句话判断</h3>
+              <blockquote id="verdict">专业红利没有消失，只是从“专业名称”转移到了<strong>工程能力、行业知识与持续学习速度</strong>。</blockquote>
+              <div class="signal-list" id="signalList"></div>
+            </article>
+            <article class="insight-card structure-card">
+              <div class="card-head"><div><span class="card-kicker">MARKET STRUCTURE</span><h3>岗位结构变化</h3></div><span class="legend"><i></i>需求指数</span></div>
+              <div class="bar-chart" id="structureChart" role="img" aria-label="2022至2030年岗位需求结构指数变化"></div>
+              <p class="chart-note">指数用于表达方向变化，不代表官方岗位数量；2026 年后为情景推演。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="directions">
+          <div class="section-heading">
+            <div><span class="section-no">03</span><h2>细分职业方向</h2></div>
+            <p>同一个专业，不同方向的薪资、门槛和生活方式可能完全不同。</p>
+          </div>
+          <div class="direction-toolbar">
+            <div class="segmented" id="directionFilter" aria-label="职业方向筛选">
+              <button class="active" data-filter="all" type="button">全部方向</button>
+              <button data-filter="growth" type="button">高成长</button>
+              <button data-filter="balance" type="button">更稳定</button>
+            </div>
+            <span>点击卡片查看完整画像</span>
+          </div>
+          <div class="direction-grid" id="directionGrid"></div>
+        </section>
+
+        <section class="section forecast-section" id="forecast">
+          <div class="section-heading">
+            <div><span class="section-no">04</span><h2>未来 5 年深度预测</h2></div>
+            <p>用最新权威产业信号、人才供给、学历门槛与岗位替代风险，对具体专业和方向做条件推演。</p>
+          </div>
+          <div class="forecast-signal-strip" id="forecastSignalStrip" aria-label="预测模型摘要"></div>
+          <div class="forecast-layout">
+            <article class="forecast-chart-card">
+              <div class="card-head">
+                <div><span class="card-kicker">2026—2030 · INDEX 100</span><h3 id="forecastChartHeading">方向需求景气度</h3></div>
+                <div class="scenario-switch" id="scenarioSwitch">
+                  <button data-scenario="conservative" type="button">保守</button>
+                  <button class="active" data-scenario="base" type="button">基准</button>
+                  <button data-scenario="optimistic" type="button">乐观</button>
+                </div>
+              </div>
+              <div class="line-chart-wrap">
+                <svg id="forecastChart" viewBox="0 0 760 310" role="img" aria-labelledby="forecastTitle forecastDesc">
+                  <title id="forecastTitle">各职业方向未来五年需求景气度预测</title>
+                  <desc id="forecastDesc">展示三个重点方向在2026至2030年的相对指数变化</desc>
+                </svg>
+              </div>
+              <div class="chart-legend" id="forecastLegend"></div>
+              <p class="forecast-method-note" id="forecastMethodNote"></p>
+            </article>
+            <aside class="driver-panel">
+              <span class="card-kicker">KEY DRIVERS</span>
+              <h3>决定未来的 4 个变量</h3>
+              <div id="driverList"></div>
+              <div class="risk-box"><span>主要风险</span><p id="riskText">低复杂度开发任务被 AI 工具压缩；只掌握单一框架的人才议价能力下降。</p></div>
+            </aside>
+          </div>
+          <div class="forecast-scenario-summary" id="forecastScenarioSummary" aria-label="三情景结果对照"></div>
+          <div class="forecast-metric-grid" id="forecastMetricGrid"></div>
+          <div class="forecast-detail-grid">
+            <article class="forecast-evidence-panel">
+              <div class="forecast-panel-head">
+                <div><span class="card-kicker">LATEST EVIDENCE</span><h3>最新证据与专业影响</h3></div>
+                <span id="evidenceFreshness">更新至 2026-08-25</span>
+              </div>
+              <div class="forecast-evidence-list" id="forecastEvidenceList"></div>
+            </article>
+            <article class="forecast-structure-panel">
+              <span class="card-kicker">JOB MIX SHIFT</span>
+              <h3>岗位结构如何变化</h3>
+              <div class="job-shift-groups" id="jobShiftGroups"></div>
+              <div class="skill-migration"><span>未来更值钱的能力</span><div id="futureSkillList"></div></div>
+            </article>
+          </div>
+          <article class="forecast-reversal-panel">
+            <div><span class="card-kicker">REVERSAL CONDITIONS</span><h3>风险、反转条件与行动窗口</h3></div>
+            <div class="reversal-grid" id="forecastReversalGrid"></div>
+          </article>
+        </section>
+
+        <section class="section" id="environment">
+          <div class="section-heading">
+            <div><span class="section-no">05</span><h2>工作环境与强度</h2></div>
+            <p>“高薪”背后是什么样的一天？这里把隐性成本摆到台面上。</p>
+          </div>
+          <div class="work-grid">
+            <article class="work-profile">
+              <div class="card-head"><div><span class="card-kicker">WORK REALITY</span><h3 id="workTitle">软件 / 云平台工程师</h3></div><select id="workDirectionSelect" aria-label="选择职业方向"></select></div>
+              <div class="reality-metrics" id="realityMetrics"></div>
+              <div class="rhythm">
+                <div class="rhythm-head"><span>典型周节奏</span><span>平稳 → 峰值</span></div>
+                <div class="week-bars" id="weekBars"></div>
+              </div>
+            </article>
+            <article class="tradeoff-card">
+              <span class="card-kicker">TRADE-OFF</span>
+              <h3>你得到什么，又交换什么</h3>
+              <div class="tradeoff-columns">
+                <div><h4><span>＋</span> 常见收益</h4><ul id="gainList"></ul></div>
+                <div><h4><span>－</span> 隐性成本</h4><ul id="costList"></ul></div>
+              </div>
+              <p class="fit-tip" id="fitTip"><strong>更适合：</strong>能接受持续学习、对复杂问题有耐心，并愿意为阶段性高压换取成长速度的人。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="roadmap">
+          <div class="section-heading">
+            <div><span class="section-no">06</span><h2>能力路线</h2></div>
+            <p>从“学过”走向“能交付”，用作品和工程证据缩短求职距离。</p>
+          </div>
+          <div class="roadmap" id="roadmapList"></div>
+        </section>
+
+        <section class="section pathway-section" id="pathways">
+          <div class="section-heading">
+            <div><span class="section-no">07</span><h2>学历、升学与体制路径</h2></div>
+            <p>难度是相对评价，综合专业匹配岗位数量、考试竞争、学历门槛和准备成本，不代表录取概率。</p>
+          </div>
+          <div class="dependency-layout">
+            <article class="degree-card">
+              <span class="card-kicker">DEGREE DEPENDENCY</span>
+              <div class="degree-score-row"><div><h3>学历依赖性</h3><p id="degreeDependencyLabel">中高</p></div><strong id="degreeDependencyScore">72</strong></div>
+              <div class="dependency-track"><span id="degreeDependencyBar" style="width:72%"></span></div>
+              <p class="degree-summary" id="degreeDependencySummary"></p>
+              <div class="degree-levels" id="degreeLevels"></div>
+            </article>
+            <article class="decision-card">
+              <span class="card-kicker">DECISION SUPPORT</span>
+              <h3>先看结论</h3>
+              <blockquote id="pathwayVerdict"></blockquote>
+              <div class="best-route" id="bestRoute"></div>
+            </article>
+          </div>
+          <div class="pathway-grid" id="pathwayGrid"></div>
+          <div class="pathway-warning">
+            <strong>报考前必须核对</strong>
+            <p>同一岗位在不同年度、地区和单位可能采用不同的专业名称、专业类或专业代码口径。务必以当次职位表、招聘公告、资格复审解释和学校培养目录为准，不要只凭专业简称判断。</p>
+          </div>
+        </section>
+
+        <section class="source-section" aria-labelledby="sourceTitle">
+          <div><span class="section-no">DATA</span><h2 id="sourceTitle">资料来源与联网复核</h2><p>报告采用公开资料快照。点击来源可联网查看最新原文；预测部分均为本工具推演。</p></div>
+          <div class="source-list" id="sourceList"></div>
+          <button class="online-button" id="onlineSearchButton" type="button"><span>联网搜索最新资料</span><svg class="ui-icon" aria-hidden="true"><use href="#icon-external"></use></svg></button>
+        </section>
+      </main>
+
+      <footer><span>工途 GONGTU</span><p>用于职业探索，不替代具体企业调研与个人决策。</p><b>DESIGNED FOR BETTER QUESTIONS</b></footer>
+    </div>
+  </div>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="direction-drawer" id="directionDrawer" aria-hidden="true" aria-labelledby="drawerTitle">
+    <button class="drawer-close" id="drawerClose" type="button" aria-label="关闭详情">×</button>
+    <span class="card-kicker" id="drawerKicker">DIRECTION 01</span>
+    <h2 id="drawerTitle"></h2>
+    <p class="drawer-summary" id="drawerSummary"></p>
+    <div class="drawer-stats" id="drawerStats"></div>
+    <div class="drawer-section"><h3>日常在做什么</h3><ul id="drawerTasks"></ul></div>
+    <div class="drawer-section"><h3>招聘方看重的证据</h3><div class="skill-tags" id="drawerSkills"></div></div>
+    <div class="drawer-section"><h3>三年成长路径</h3><p id="drawerPath"></p></div>
+  </aside>
+
+  <script src="catalog-2026.js"></script>
+  <script src="catalog-profiles.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+{
+  "name": "gongtu-career-insight",
+  "version": "1.0.0",
+  "description": "覆盖全部本科专业的就业、升学与体制路径分析桌面应用",
+  "main": "electron/main.cjs",
+  "author": "Gongtu",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "desktop": "electron .",
+    "pack": "electron-builder --win portable nsis --x64 --publish never",
+    "sign:dev": "powershell -ExecutionPolicy Bypass -File scripts/sign-release.ps1"
+  },
+  "devDependencies": {
+    "electron": "40.2.1",
+    "electron-builder": "26.0.12"
+  },
+  "build": {
+    "appId": "cn.gongtu.careerinsight",
+    "productName": "工途就业深析",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "index.html",
+      "catalog-2026.js",
+      "catalog-profiles.js",
+      "styles.css",
+      "app.js",
+      "assets/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "asarUnpack": [],
+    "compression": "maximum",
+    "win": {
+      "icon": "assets/icon.ico",
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        },
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "legalTrademarks": "Gongtu",
+      "requestedExecutionLevel": "asInvoker",
+      "verifyUpdateCodeSignature": true,
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "artifactName": "Gongtu-Career-Insight-${version}-${arch}-setup.${ext}",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "工途就业深析",
+      "deleteAppDataOnUninstall": false
+    },
+    "portable": {
+      "artifactName": "Gongtu-Career-Insight-${version}-${arch}-portable.${ext}"
+    }
+  }
+}
